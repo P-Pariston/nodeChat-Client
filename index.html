@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>nodeChat</title>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+    <script type="text/javascript" src="static/js/modal.js"></script>
+      <script type="text/javascript" src="static/js/functions.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/style.min.css">
+    <link rel="shortcut icon" href="http://nodechat.fr/static/img/favicon.ico" type="image/png">
+</head>
+<body style="height:100%; width:100%; position:fixed;">
+<div class="topbar">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name"><h1><a href="#">nodeChat</a></h1></li>
+        <ul class="right">
+      <li class="divider hide-for-small"></li>
+      <li class="has-dropdown"><a href="#"><div id="user">Guest</div></a>
+
+        <ul class="dropdown">
+          <li class="has-dropdown"><a href="#" id="open-modal1">Login</a>
+          <li class="has-dropdown"><a href="#" id="open-modal2">Register</a>
+          <li class="has-dropdown"><a href="#" class="">etc...</a>
+        </ul>
+      </ul>
+</nav>
+
+</div>
+<div class="limitleft" style="width:13%; min-width:150px; height:97%; overflow:auto; float:left; background-color:grey;">
+  <div class="contentleft"><br/>
+  <p style="text-align:center; color:white;" id="countusers"><b id="nbusers">?</b> online user(s)</p>
+    <ul class="nav-bar vertical" id="userlist">
+    <p style="color:#FFF;">Please login to see all online users</p>
+    </ul>
+  </div>
+</div>
+    <div id="tchat">
+	<div id="line"><i>Connecting...</i>.</div>
+    </div>
+<div class="contentbottom" style="float:right; width:87%; height:13%; background-color:#e6e6e6; margin-bottom:0; border-top: solid 1px #CFCFCF;">
+   <form onsubmit="return (sendMessage()); return false;" id="messageForm">
+    <div class="row">
+    <div class="small-8">
+      <div class="row">
+        <div class="small-2 columns" style="width:7%; margin-left:6%; margin-top:7px;">
+        <div id="user-name">
+          </div>
+        </div>
+        <div class="small-9 columns" style="width:85%;">
+        <div id="login">Connecting...</div>
+        <div id="disconnected"></div>
+        <div id="user-form">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+  </div>
+<div id="modal1" style="display: none; position: fixed; z-index: 2; left: 50%; top: 50%; margin-left: -200px; margin-top: -134.5px;">
+	<div class="header">
+		<h3>Login</h3>
+	</div>
+	<form onsubmit="return (dismissLogin());">
+		<div class="txt">
+			<label for="username">Username:</label>
+			<input type="text" name="" id="usernamelogin" style="height:25px;">
+		</div>
+	</form>
+</div>
+  <script type="text/javascript" src="static/js/client.js"></script>
+  <script type="text/javascript" src="static/js/checkConnection.js"></script>
+  <script>
+/*
+ * Modal configuration
+ */
+
+$(function() {
+   $('#modal1').easyModal();
+});
+
+$('#modal1').easyModal({
+	top: 200,
+	overlay : 0.2
+	//overlayClose: false
+});
+
+$('#open-modal1').click(function(e){
+	$('#modal1').trigger('openModal');
+	e.preventDefault();
+});
+  </script>
+</body>
+</html>
