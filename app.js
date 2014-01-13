@@ -98,18 +98,21 @@ io.sockets.on('connection', function(socket){
     }); 
     //Storing messages in the array messages
 	socket.emit('getPosts', messages);
-	socket.on('newPost', function(mess){
+	socket.on('newPost', function (mess){
 	/* Hour in the var current_hour, we send and
 	 * register it to the socket of the 'message'
 	 */	
 	 current_hour = getTime();
-	 	if(mess.message == "/hour")
-			socket.emit('command', current_hour);
+        if(mess.message.charAt(0) == "/"){
+            var Command = require('./commands.js');
+            var c = new Command();
+            c.hour(current_hour); 
+        }
 		else{
-		mess.hour = current_hour;
-		messages.push(mess);
-		socket.emit('getNewPosts', mess);	
-		socket.broadcast.emit('getNewPosts', mess);	
+    		mess.hour = current_hour;
+    		messages.push(mess);
+    		socket.emit('getNewPosts', mess);	
+    		socket.broadcast.emit('getNewPosts', mess);	
 		}	
 	});
 })
