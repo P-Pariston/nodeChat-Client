@@ -6,7 +6,7 @@ socket.on('connected', function(connected) {
     console.log(connected);
     var connected = connected;
     if(connected == 1){
-     $('#login').html("<p style='height:50%; margin-top:7px;''><button class='small button' onclick='return false;''>Login</button> &nbsp;&nbsp;&nbsp; Hi ! Welcome to nodeChat, please login to post a message.</p>");
+     $('#login').html("<p style='height:50%; margin-top:7px;''><button class='small button' onclick='return false;''>Login</button> <!-- &nbsp;<button class='small button' onclick='return false;''>Register</button> --> &nbsp;&nbsp;&nbsp; Hi ! Welcome to nodeChat, please login to post a message.</p>");
     
     }else{}
 });
