@@ -1,7 +1,7 @@
-IP = 'http://localhost';
+IP = 'localhost';
 PORT = 8000;
 
-var socket = io.connect(IP+':'+PORT);
+var socket = io.connect('http://'+IP+':'+PORT);
 
 /*
  * Scrolling to the bottom every posts
