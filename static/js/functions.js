@@ -38,19 +38,6 @@ function dismissLogin(){
   return pseudo;
 }
 
-/*********
-//Random color 
-function idColor() {
-      var letters = '0123456789ABCDEF'.split('');
-      var color = '#';
-      for (var i = 0; i < 6; i++ ) {
-          color += letters[Math.round(Math.random() * 15)];
-      }
-      return color;
-  }
-  var pseudotitle = pseudo;
-  //var pseudo = "<b style='color:"+idColor()+";' >"+pseudo+"</b>";
-************/
 
 /*
  * To send a message to the server
