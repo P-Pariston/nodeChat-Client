@@ -7,3 +7,8 @@ License
 =======
 
 nodeChat's client is distributed under the terms of the MIT License.
+
+Credits
+=======
+
+DAOUSSI Kassem - development, design.
