@@ -1,4 +1,4 @@
-(function($) {
+  (function($) {
   //user
     PopupLogin = Backbone.View.extend({
       initialize: function(){
@@ -34,7 +34,7 @@
         }
     }});
 
-//Messages...
+//Messages
       Message = Backbone.View.extend({
         /*
          * Getting messages from the server and displaying it
@@ -68,8 +68,8 @@
             document.getElementById('tchat').innerHTML += '<div id="line"><b>bot</b> : '+pseudo+' was disconnected.</div>';
             scrollBottom();
           });
-          socket.on('command', function (current_hour){
-            document.getElementById('tchat').innerHTML += '<div id="line">'+current_hour+'</div>';
+          socket.on('reply', function (reply){
+            document.getElementById('tchat').innerHTML += '<div id="line">'+reply+'</div>';
             scrollBottom();
           })
         },
