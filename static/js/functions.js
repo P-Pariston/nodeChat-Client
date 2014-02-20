@@ -1,4 +1,7 @@
+// localhost, IP or domain name
 IP = 'localhost';
+
+//Port (the same one as the server, default is 8000)
 PORT = 8000;
 
 var socket = io.connect('http://'+IP+':'+PORT);
