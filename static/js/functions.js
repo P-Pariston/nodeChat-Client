@@ -38,7 +38,6 @@ function dismissLogin(){
   return pseudo;
 }
 
-
 /*
  * To send a message to the server
  * after sumitting the form with "enter"
