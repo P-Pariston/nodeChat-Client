@@ -47,7 +47,7 @@ function dismissLogin(){
  */
 function sendMessage(mess) {
           var message = document.getElementById('message').value;
-          socket.emit('newPost', { 'hour' : '', 'pseudo' : pseudo, 'message' : message });
+          socket.emit('newPost', { 'hour' : '', 'pseudo' : pseudo, 'message' : message, rank: 4});
           scrollBottom();
           $('#message').val('');
           return false;
