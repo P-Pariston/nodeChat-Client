@@ -69,7 +69,7 @@
             scrollBottom();
           });
           socket.on('reply', function (reply){
-            document.getElementById('tchat').innerHTML += '<div id="line" style="font-size:12px;>'+reply+'</div>';
+            document.getElementById('tchat').innerHTML += '<div id="line" style="font-size:12px;">'+reply+'</div>';
             scrollBottom();
           })
         },
