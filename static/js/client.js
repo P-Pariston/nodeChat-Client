@@ -25,7 +25,7 @@
         e.preventDefault()
         if(pseudo != ''){
           socket.emit('username', pseudo);
-          $('#login').remove();
+          $('#login').html('');
           $('#user-name').html('<label for="right-label" class="inline"><b><div id="user-button">' + pseudo + '</div></b></label>');
           $('#user-form').html('<input type="text" required="required" name="message" id="message" placeholder="Push Enter to send your message" style="height:50%; margin-top:7px;" autofocus />');
           $('#user').html(pseudo);
