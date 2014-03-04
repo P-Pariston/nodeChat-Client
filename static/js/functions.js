@@ -1,5 +1,5 @@
 // localhost, IP or domain name
-SERVER = 'localhost';
+SERVER = document.location.hostname;
 
 //Port (the same one as the server, default is 8000)
 PORT = 8000;
