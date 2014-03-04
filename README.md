@@ -1,7 +1,9 @@
 nodeChat-Client
 ===============
 
-Client for nodeChat server. Please do not forget to edit the file <code>static/js/functions.js</code> if necessary.
+Client for nodeChat server. 
+
+WARNING: You probably want the server, if your are in this case, please click here: https://github.com/P-Pariston/nodeChat
 
 License
 =======
