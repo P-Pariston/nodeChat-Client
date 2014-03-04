@@ -14,7 +14,7 @@ PORT = c[1];
  * please uncomment this part and remove all lines
  * beyond
  *-------------------.
- * IP = yourPort;
+ * PORT = yourPort;
  * SERVER = yourHostname;
  */
 var socket = io.connect('http://'+SERVER+':'+PORT);
