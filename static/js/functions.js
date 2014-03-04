@@ -1,9 +1,22 @@
-// localhost, IP or domain name
-SERVER = document.location.hostname;
+/* For the automatic client
+ * This allows any person to create his
+ * own chat on your server.
+ */
+h = document.location.hostname;
+h = h.split('.');
+c = h[0]; //->"IP-PORT"
+c = c.split('-');
+SERVER = c[0];
+PORT = c[1];
 
-//Port (the same one as the server, default is 8000)
-PORT = 8000;
-
+/*
+ * If you want to install your own client, 
+ * please uncomment this part and remove all lines
+ * beyond
+ *-------------------.
+ * IP = yourPort;
+ * SERVER = yourHostname;
+ */
 var socket = io.connect('http://'+SERVER+':'+PORT);
 
 /*
