@@ -2,12 +2,11 @@
  * This allows any person to create his
  * own chat on your server.
  */
-h = document.location.hostname;
-h = h.split('.');
-c = h[0]; //->"IP-PORT"
-c = c.split('-');
-SERVER = c[0];
-PORT = c[1];
+b = document.location.hostname;
+c = b.split('.nodechat.fr');//Replace it by your domain
+d = c[0].split('-');
+SERVER = d[0];
+PORT = d[1];
 
 /*
  * If you want to install your own client, 
