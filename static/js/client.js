@@ -6,13 +6,16 @@
       },
       el: '#login',
       events: {
-        'click button': 'login'
+        'click #loginbtn': 'login',
+        'click #registerbtn': 'register'
       },
       login: function(){
         askLogin();
+      },
+      register: function(){
+        askRegister();
       }
     });
-
     Login = Backbone.View.extend({
       initialize: function(){
         
