@@ -55,7 +55,7 @@ function dismissRegister(){
   pseudo = $('#usernameregister').val();
   pw = $('#passwordregister').val();
   pwcheck = $('#passwordcheck').val();
-  if(pw == pwcheck){
+  if(pw == pwcheck && pseudo != '' && pw != ''){
     socket.emit('newPost', {'message': '/register '+pseudo+' '+pw})
   }else{
     document.getElementById('tchat').innerHTML += '<div id="line" style="font-size:12px;">Entered passwords are not the same.</div>';
