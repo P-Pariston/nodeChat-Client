@@ -2,22 +2,22 @@
  * This allows any person to create his
  * own chat on your server.
  */
- /****
+
 h = document.location.hostname;
 h = h.split('.');
 c = h[0]; //->"IP-PORT"
 c = c.split('-');
 SERVER = c[0];
 PORT = c[1];
-****/
+
 /*
  * If you want to install your own client, 
  * please uncomment this part and remove all lines
  * beyond
- *-------------------.*/
+ *
 PORT = '8000';
 SERVER = 'localhost';
-
+*/
 var socket = io.connect('http://'+SERVER+':'+PORT);
 
 /*
