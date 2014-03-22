@@ -66,7 +66,7 @@
 		<h3>Login</h3>
 	</div>
 	<form onsubmit="return (dismissLogin());" id="loginform">
-		<div class="txt"ss>
+		<div class="txt">
 			<label for="username">Username:</label>
 			<input type="text" name="" id="usernamelogin" style="height:25px;">
       <label for="username">Password:</label>
@@ -75,6 +75,23 @@
 		</div>
     <center><i>(Max name length is 11 chars.)</i></center>
 	</form>
+</div>
+<div id="modal2" style="display: none; position: fixed; z-index: 2; left: 50%; top: 50%; margin-left: -200px; margin-top: -134.5px;">
+  <div class="header">
+    <h3>Register</h3>
+  </div>
+  <form onsubmit="return (dismissRegister());" id="loginform">
+    <div class="txt">
+      <label for="username">Username:</label>
+      <input type="text" name="" id="usernameregister" style="height:25px;">
+      <label for="username">Password:</label>
+      <input type="text" name="" id="passwordregister" style="height:25px;">
+      <label for="username">Password (again):</label>
+      <input type="text" name="" id="passwordcheck" style="height:25px;">
+      <center><button class="button [tiny small large]">Register</button></center>
+    </div>
+    <center><i>(Max name length is 11 chars.)</i></center>
+  </form>
 </div>
   <script type="text/javascript" src="static/js/client.js"></script>
   <script type="text/javascript" src="static/js/checkConnection.js"></script>
@@ -89,13 +106,28 @@ $(function() {
 
 $('#modal1').easyModal({
 	top: 200,
-	overlay : 0.2
+	overlay : 0
 	//overlayClose: false
 });
 
 $('#open-modal1').click(function(e){
 	$('#modal1').trigger('openModal');
 	e.preventDefault();
+});
+/*********************/
+$(function() {
+   $('#modal2').easyModal();
+});
+
+$('#modal2').easyModal({
+  top: 200,
+  overlay : 0
+  //overlayClose: false
+});
+
+$('#open-modal2').click(function(e){
+  $('#modal2').trigger('openModal');
+  e.preventDefault();
 });
   </script>
 </body>
