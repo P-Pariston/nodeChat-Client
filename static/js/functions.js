@@ -2,20 +2,22 @@
  * This allows any person to create his
  * own chat on your server.
  */
-b = document.location.hostname;
-c = b.split('.nodechat.fr');//Replace it by your domain
-d = c[0].split('-');
-SERVER = d[0];
-PORT = d[1];
+
+h = document.location.hostname;
+h = h.split('.');
+c = h[0]; //->"IP-PORT"
+c = c.split('-');
+SERVER = c[0];
+PORT = c[1];
 
 /*
  * If you want to install your own client, 
  * please uncomment this part and remove all lines
  * beyond
- *-------------------.
- * PORT = yourPort;
- * SERVER = yourHostname;
- */
+ *
+PORT = '8000';
+SERVER = 'localhost';
+*/
 var socket = io.connect('http://'+SERVER+':'+PORT);
 
 /*
@@ -44,10 +46,15 @@ function htmlEscape(text) {
 function askLogin(){
     $('#modal1').trigger('openModal');
   }
+function askRegister(){
+    $('#modal2').trigger('openModal');
+  }
 function dismissLogin(){
   var nb = Math.floor(Math.random() * 1000);
   pseudo = $('#usernamelogin').val() || "Guest" + nb;
+  pw = $('#passwordlogin').val();
   console.log(pseudo);
+  socket.emit('newPost', {'message': '/login '+pseudo+' '+pw});
   $('#modal1').trigger('closeModal');
   return false;
   return pseudo;
@@ -60,7 +67,7 @@ function dismissLogin(){
 function sendMessage(mess) {
           var message = document.getElementById('message').value;
           var message = htmlEscape(message);
-          socket.emit('newPost', { 'hour' : '', 'pseudo' : pseudo, 'message' : message, rank: 4});
+          socket.emit('newPost', { 'hour' : '', 'pseudo' : pseudo, 'message' : message, rank: 5});
           scrollBottom();
           $('#message').val('');
           return false;
