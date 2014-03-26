@@ -4,7 +4,7 @@
  */
 
 h = document.location.hostname;
-h = h.split('.');
+h = h.split('.'); //.yourdomain.tld
 c = h[0]; //->"IP-PORT"
 c = c.split('-');
 SERVER = c[0];
