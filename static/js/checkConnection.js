@@ -42,6 +42,7 @@ socket.on('isLogged', function(c){
       break;
       case '1':
       //OK
+      $('#open-modal1').remove();
       break;
       default:
       alert('woops, there is a problem... :/');
